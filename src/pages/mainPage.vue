@@ -4,14 +4,16 @@
   <div class="wrapper">
     <div class="grid-wrapper">
       <router-link to="/select" class="wide">
-        <basicButton>Играть</basicButton>
+        <basicButton class="h"> Играть </basicButton>
       </router-link>
-      <router-link to="/select" class="half">
-        <basicButton class="white"> Очки </basicButton>
-      </router-link>
-      <router-link to="/select" class="half">
-        <basicButton class="white"> ? </basicButton>
-      </router-link>
+      <div class="flex-row">
+        <router-link to="/select" class="half">
+          <basicButton class="white h"> Очки </basicButton>
+        </router-link>
+        <router-link to="/select" class="half">
+          <basicButton class="white h"> ? </basicButton>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -25,7 +27,6 @@
     height: 45vh;
     width: 100%;
     background-color: #562dd2;
-    margin: 0 auto;
     display: block;
   }
 
@@ -34,22 +35,32 @@
     font-size: 36pt;
   }
 
+  .wrapper {
+    padding: 1rem;
+  }
+
   .grid-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     width: 100%;
-    max-width: 25rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    align-items: stretch;
   }
 
   .wide {
-    grid-column: 1 / span 2;
+    width: 100%;
+  }
+
+  .flex-row {
+    display: flex;
+    gap: 1rem;
   }
 
   .half {
+    flex: 1 1 0;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
   }
 </style>

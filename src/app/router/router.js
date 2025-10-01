@@ -18,7 +18,13 @@ const router = createRouter({
         {
           path: "select",
           name: "gameSelect",
-          component: () => import("../../pages/gameSelect.vue"),
+          component: () => import("../../pages/selectPage.vue"),
+          meta: { showHeader: true },
+        },
+        {
+          path: "game",
+          name: "gamePage",
+          component: () => import("../../pages/gamePage.vue"),
           meta: { showHeader: true },
         },
       ],

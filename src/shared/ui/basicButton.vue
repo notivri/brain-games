@@ -6,18 +6,29 @@
 
 <style>
   button {
-    height: 5rem;
     width: 100%;
-    min-width: 8rem;
+    max-height: 5rem;
     background-color: #562dd2;
     border-radius: 3px;
     color: white;
+  }
+
+  .white {
+    background-color: white;
+    border: solid 2px #562dd2;
+    color: #562dd2;
+  }
+
+  .h {
     font-weight: 700;
     font-size: 21pt;
   }
-  .white {
-    background-color: white;
-    border: solid 3px #562dd2;
-    color: #562dd2;
+
+  .bold {
+    font-weight: 700;
+  }
+
+  button:active {
+    transform: scale(0.98);
   }
 </style>
