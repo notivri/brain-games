@@ -1,6 +1,6 @@
 <template>
   <div class="grid-wrapper">
-    <router-link v-for="game in games" to="/game" :key="game.name">
+    <router-link v-for="game in games" :to="`/game/${game.id}`" :key="game.id">
       <basicCard>
         {{ game.name }}
       </basicCard>
@@ -12,7 +12,7 @@
   import basicCard from "../shared/ui/basicCard.vue"
 
   const games = [
-    { name: "Game 1" },
+    { id: 1, name: "Калькулятор" },
     { name: "Game 2" },
     { name: "Game 3" },
     { name: "Game 4" },

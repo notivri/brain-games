@@ -1,28 +1,67 @@
 <template>
   <div>
     <div class="wrapper">
-      <h2>Название игры</h2>
+      <div>
+        <h2>{{ gameName }}</h2>
+        <p>{{ gameDescription }}</p>
+        <p>Очки: {{ userScore }}</p>
+      </div>
       <div class="boxes">
-        <div class="box"><heartIcon /></div>
-        <div class="box"><heartIcon /></div>
-        <div class="box"><heartIcon /></div>
+        <div
+          v-for="i in maxLives"
+          :key="i"
+          class="box"
+          :class="{ inactive: i > userLives }"
+        >
+          <heartIcon />
+        </div>
       </div>
     </div>
 
     <div class="task-container">
-      <div class="task">Пример:</div>
+      <div class="task">
+        {{ state.gameQuestion }}
+      </div>
       <div class="buttons">
-        <basicInput />
-        <basicButton class="bold"> Ответить </basicButton>
+        <basicInput v-model="userAnswer" />
+        <basicButton class="bold" @click="game.checkAnswer(userAnswer)">
+          Ответить
+        </basicButton>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+  import { ref, watch } from "vue"
+  import { useRoute, useRouter } from "vue-router"
+  import Game from "../entites/game/model/Game"
   import basicButton from "../shared/ui/basicButton.vue"
   import basicInput from "../shared/ui/basicInput.vue"
   import heartIcon from "../shared/icons/heartIcon.vue"
+
+  const route = useRoute()
+  const router = useRouter()
+
+  const gameId = route.params.id
+  const game = new Game(gameId)
+
+  const gameName = game.getName()
+  const gameDescription = game.getDescription()
+  const maxLives = 3
+  const userLives = game.getLives()
+  const userScore = game.getScore()
+  const state = game.getState()
+
+  const userAnswer = ref("")
+
+  watch(userLives, (lives) => {
+    if (lives <= 0) {
+      router.push({
+        path: `/end/${userScore.value}`,
+      })
+    }
+  })
 </script>
 
 <style scoped>
@@ -51,6 +90,10 @@
     width: 2rem;
     border-radius: 6px;
     background-color: #92da63;
+
+    &.inactive {
+      background-color: #ff2c7c;
+    }
   }
 
   .task-container {

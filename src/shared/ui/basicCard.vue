@@ -17,7 +17,7 @@
   .logo {
     width: min(40vw, 8rem);
     height: min(40vw, 8rem);
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.215);
     outline: solid 3px #562dd2;
     border-radius: 6px;
   }

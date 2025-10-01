@@ -10,21 +10,27 @@ const router = createRouter({
       redirect: { name: "mainPage" },
       children: [
         {
-          path: "main",
+          path: "/main",
           name: "mainPage",
           component: () => import("../../pages/mainPage.vue"),
           meta: { showHeader: false },
         },
         {
-          path: "select",
+          path: "/select",
           name: "gameSelect",
           component: () => import("../../pages/selectPage.vue"),
           meta: { showHeader: true },
         },
         {
-          path: "game",
+          path: "/game/:id",
           name: "gamePage",
           component: () => import("../../pages/gamePage.vue"),
+          meta: { showHeader: true },
+        },
+        {
+          path: "/end/:score",
+          name: "endPage",
+          component: () => import("../../pages/endPage.vue"),
           meta: { showHeader: true },
         },
       ],

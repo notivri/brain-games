@@ -1,13 +1,22 @@
 <template>
   <div class="input-wrapper">
-    <input type="text" />
+    <input
+      @input="$emit('update:modelValue', $event.target.value)"
+      type="text"
+    />
   </div>
 </template>
+
+<script setup>
+  defineProps({
+    modelValue: String,
+  })
+</script>
 
 <style scoped>
   .input-wrapper {
     width: 100%;
-    max-width: 500px; /* на больших экранах не растягиваемся слишком сильно */
+    max-width: 500px;
   }
 
   input {
@@ -17,7 +26,7 @@
     border-radius: 6px;
     color: black;
     box-sizing: border-box;
-    font-size: clamp(1rem, 2.5vw, 1.2rem); /* адаптивный размер текста */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     padding: 0.6rem 0.8rem;
     transition:
       box-shadow 0.2s ease-in-out,
