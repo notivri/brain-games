@@ -24,15 +24,14 @@
 <style scoped>
   .grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     justify-items: center;
     align-items: center;
     width: 100%;
-    max-width: 64rem;
-    gap: clamp(1rem, 4vw, 2rem);
-    padding: clamp(1rem, 4vw, 2rem);
-    padding-top: clamp(1rem, 5vw, 3rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    padding: 1rem;
     box-sizing: border-box;
-    margin-top: 1rem;
   }
 </style>

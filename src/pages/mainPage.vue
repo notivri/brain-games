@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="logo" />
+    <div class="logo">
+      <mainIcon />
+    </div>
     <div class="wrapper">
       <h1>Brain Brain</h1>
       <div class="grid-wrapper">
@@ -22,27 +24,27 @@
 
 <script setup>
   import basicButton from "../shared/ui/basicButton.vue"
+  import mainIcon from "../shared/icons/mainIcon.vue"
 </script>
 
 <style scoped>
   .logo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 45vh;
-    width: 100%;
-    background-color: #562dd2;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0 1rem;
+    box-sizing: border-box;
   }
 
   h1 {
     text-align: center;
-    font-size: 36pt;
-  }
-
-  .wrapper {
-    padding: 1rem;
-    padding-top: 40vh;
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-top: 0.5rem;
   }
 
   .grid-wrapper {
@@ -51,6 +53,7 @@
     gap: 1rem;
     width: 100%;
     align-items: stretch;
+    margin-top: 0.5rem;
   }
 
   .wide {
@@ -59,14 +62,11 @@
 
   .flex-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
   .half {
-    flex: 1 1 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: block;
+    flex: 1 1 45%;
   }
 </style>

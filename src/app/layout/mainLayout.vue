@@ -19,7 +19,7 @@
 
 <style scoped>
   .header-container {
-    height: 3rem;
+    height: clamp(5rem, 7vw, 6rem);
     position: relative;
   }
 

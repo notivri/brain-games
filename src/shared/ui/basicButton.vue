@@ -11,9 +11,11 @@
     width: 100%;
     min-height: 2.5rem;
     background-color: #562dd2;
-    border-radius: 3px;
+    border-radius: 6px;
     color: white;
     box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
   }
 
   .white {
@@ -23,9 +25,9 @@
   }
 
   .h {
-    height: 4rem;
+    min-height: 3.5rem;
     font-weight: 700;
-    font-size: 21pt;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
   }
 
   .bold {
@@ -33,6 +35,6 @@
   }
 
   button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
   }
 </style>
