@@ -1,9 +1,12 @@
 <template>
-  <input type="text" />
+  <div>
+    <input type="text" />
+  </div>
 </template>
 
 <style scoped>
   input {
+    width: 100%;
     background-color: #ffffff;
     border: solid 2px #562dd2;
     border-radius: 3px;

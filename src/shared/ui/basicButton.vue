@@ -4,13 +4,16 @@
   </button>
 </template>
 
-<style>
+<style scoped>
   button {
+    all: unset;
+    text-align: center;
     width: 100%;
-    max-height: 5rem;
+    min-height: 2.5rem;
     background-color: #562dd2;
     border-radius: 3px;
     color: white;
+    box-sizing: border-box;
   }
 
   .white {
@@ -20,6 +23,7 @@
   }
 
   .h {
+    height: 4rem;
     font-weight: 700;
     font-size: 21pt;
   }

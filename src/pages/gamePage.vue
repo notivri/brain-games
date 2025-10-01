@@ -1,17 +1,19 @@
 <template>
-  <div class="wrapper">
-    <h2>Название игры</h2>
-    <div class="boxes">
-      <div class="box" />
-      <div class="box" />
-      <div class="box" />
+  <div>
+    <div class="wrapper">
+      <h2>Название игры</h2>
+      <div class="boxes">
+        <div class="box" />
+        <div class="box" />
+        <div class="box" />
+      </div>
     </div>
-  </div>
 
-  <div class="task">Пример:</div>
-  <div class="buttons">
-    <basicInput></basicInput>
-    <basicButton class="bold">Ответить</basicButton>
+    <div class="task">Пример:</div>
+    <div class="buttons">
+      <basicInput></basicInput>
+      <basicButton class="bold">Ответить</basicButton>
+    </div>
   </div>
 </template>
 

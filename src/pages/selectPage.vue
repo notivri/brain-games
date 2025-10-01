@@ -33,5 +33,6 @@
     padding: clamp(1rem, 4vw, 2rem);
     padding-top: clamp(1rem, 5vw, 3rem);
     box-sizing: border-box;
+    margin-top: 1rem;
   }
 </style>

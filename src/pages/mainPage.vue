@@ -1,18 +1,20 @@
 <template>
-  <div class="logo" />
-  <h1>Brain Brain</h1>
-  <div class="wrapper">
-    <div class="grid-wrapper">
-      <router-link to="/select" class="wide">
-        <basicButton class="h"> Играть </basicButton>
-      </router-link>
-      <div class="flex-row">
-        <router-link to="/select" class="half">
-          <basicButton class="white h"> Очки </basicButton>
+  <div>
+    <div class="logo" />
+    <div class="wrapper">
+      <h1>Brain Brain</h1>
+      <div class="grid-wrapper">
+        <router-link to="/select" class="wide">
+          <basicButton class="h"> Играть </basicButton>
         </router-link>
-        <router-link to="/select" class="half">
-          <basicButton class="white h"> ? </basicButton>
-        </router-link>
+        <div class="flex-row">
+          <router-link to="/select" class="half">
+            <basicButton class="white h"> Очки </basicButton>
+          </router-link>
+          <router-link to="/select" class="half">
+            <basicButton class="white h"> ? </basicButton>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -24,6 +26,9 @@
 
 <style scoped>
   .logo {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 45vh;
     width: 100%;
     background-color: #562dd2;
@@ -37,6 +42,7 @@
 
   .wrapper {
     padding: 1rem;
+    padding-top: 40vh;
   }
 
   .grid-wrapper {
