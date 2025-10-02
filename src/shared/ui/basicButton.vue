@@ -16,6 +16,7 @@
     box-sizing: border-box;
     padding: 0.5rem 1rem;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
+    cursor: pointer;
   }
 
   .white {

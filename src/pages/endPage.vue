@@ -13,7 +13,7 @@
         white: !isWin,
       }"
       class="bold basicButton"
-      @click="$router.push('/game/${route.params.id}')"
+      @click="$router.push(`/game/${route.params.id}`)"
     >
       Продолжить
     </basicButton>
@@ -25,6 +25,7 @@
   const route = useRoute()
   const score = route.params.score
   const isWin = score > 5
+  console.log(route.params.id)
 </script>
 <style scoped>
   .image {
