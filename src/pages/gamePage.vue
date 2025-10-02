@@ -22,12 +22,10 @@
       <div class="task">
         {{ state.gameQuestion }}
       </div>
-      <div class="buttons">
+      <form class="buttons" @submit.prevent="handleSubmit">
         <basicInput v-model="userAnswer" />
-        <basicButton class="bold" @click="game.checkAnswer(userAnswer)">
-          Ответить
-        </basicButton>
-      </div>
+        <basicButton type="submit" class="bold"> Ответить </basicButton>
+      </form>
     </div>
   </div>
 </template>
@@ -55,10 +53,14 @@
 
   const userAnswer = ref("")
 
+  const handleSubmit = () => {
+    game.checkAnswer(userAnswer.value)
+    userAnswer.value = ""
+  }
   watch(userLives, (lives) => {
     if (lives <= 0) {
       router.push({
-        path: `/end/${userScore.value}`,
+        path: `/end/${userScore.value}/${gameId}`,
       })
     }
   })

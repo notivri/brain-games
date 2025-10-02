@@ -28,7 +28,7 @@ const router = createRouter({
           meta: { showHeader: true },
         },
         {
-          path: "/end/:score",
+          path: "/end/:score/:id",
           name: "endPage",
           component: () => import("../../pages/endPage.vue"),
           meta: { showHeader: true },

@@ -22,10 +22,10 @@
     justify-content: center;
     align-items: center;
     place-self: center;
-    max-width: 1200px;
   }
 
   .wrapper {
+    color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 
     &#mainIcon {
       height: clamp(4rem, 5vw, 5rem);

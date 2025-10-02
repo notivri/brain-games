@@ -1,12 +1,12 @@
 <template>
   <div class="input-wrapper">
     <input
-      @input="$emit('update:modelValue', $event.target.value)"
+      :value="modelValue"
       type="text"
+      @input="$emit('update:modelValue', $event.target.value)"
     />
   </div>
 </template>
-
 <script setup>
   defineProps({
     modelValue: String,

@@ -8,15 +8,14 @@ export default class Game {
       generate: () => {
         const a = Math.floor(Math.random() * 10)
         const b = Math.floor(Math.random() * 10)
-        const operators = ["+", "-", "*", "/"]
+        const operators = ["+", "-", "*"]
         const operator = operators[Math.floor(Math.random() * operators.length)]
         const result = {
           "+": a + b,
           "-": a - b,
           "*": a * b,
-          "/": b !== 0 ? Number((a / b).toFixed(2)) : 0,
         }
-
+        console.log(result[operator])
         return {
           gameQuestion: `Сколько будет ${a} ${operator} ${b}?`,
           correctAnswer: result[operator],
