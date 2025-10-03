@@ -1,31 +1,9 @@
 import { ref, reactive } from "vue"
+import { games } from "@/shared/functions/games.js"
 
 export default class Game {
-  static games = {
-    1: {
-      name: "Калькулятор",
-      description: "Посчитай пример",
-      generate: () => {
-        const a = Math.floor(Math.random() * 10 + 1)
-        const b = Math.floor(Math.random() * 10 + 1)
-        const operators = ["+", "-", "*"]
-        const operator = operators[Math.floor(Math.random() * operators.length)]
-        const result = {
-          "+": a + b,
-          "-": a - b,
-          "*": a * b,
-        }
-        console.log(result[operator])
-        return {
-          gameQuestion: `Сколько будет ${a} ${operator} ${b}?`,
-          correctAnswer: result[operator],
-        }
-      },
-    },
-  }
-
   constructor(level = 1) {
-    this.game = Game.games[level]
+    this.game = games[level - 1] // -1 т.к. там массив
     this.score = ref(0)
     this.lives = ref(3)
     this.state = reactive(this.game.generate())

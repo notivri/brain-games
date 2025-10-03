@@ -10,15 +10,7 @@
 
 <script setup>
   import basicCard from "../shared/ui/basicCard.vue"
-
-  const games = [
-    { id: 1, name: "Калькулятор" },
-    { name: "Game 2" },
-    { name: "Game 3" },
-    { name: "Game 4" },
-    { name: "Game 5" },
-    { name: "Game 6" },
-  ]
+  import { games } from "@/shared/functions/games.js"
 </script>
 
 <style scoped>
