@@ -4,7 +4,7 @@
       <mainIcon />
     </div>
     <div class="wrapper">
-      <h1>Brain Brain</h1>
+      <h1>Brain Games</h1>
       <div class="grid-wrapper">
         <router-link to="/select" class="wide">
           <basicButton class="h"> Играть </basicButton>

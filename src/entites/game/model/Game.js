@@ -6,8 +6,8 @@ export default class Game {
       name: "Калькулятор",
       description: "Посчитай пример",
       generate: () => {
-        const a = Math.floor(Math.random() * 10)
-        const b = Math.floor(Math.random() * 10)
+        const a = Math.floor(Math.random() * 10 + 1)
+        const b = Math.floor(Math.random() * 10 + 1)
         const operators = ["+", "-", "*"]
         const operator = operators[Math.floor(Math.random() * operators.length)]
         const result = {
