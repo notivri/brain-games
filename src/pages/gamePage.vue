@@ -23,7 +23,7 @@
         {{ state.gameQuestion }}
       </div>
       <form class="buttons" @submit.prevent="handleSubmit">
-        <basicInput v-model="userAnswer" />
+        <basicInput v-model="userAnswer" :placeholder="gameInstruction" />
         <basicButton type="submit" class="bold"> Ответить </basicButton>
       </form>
     </div>
@@ -46,6 +46,8 @@
 
   const gameName = game.getName()
   const gameDescription = game.getDescription()
+  const gameInstruction = game.getInstruction()
+
   const maxLives = 3
   const userLives = game.getLives()
   const userScore = game.getScore()

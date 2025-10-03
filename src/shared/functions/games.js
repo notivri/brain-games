@@ -4,6 +4,7 @@ const list = [
   {
     name: "Калькулятор",
     description: "Посчитай пример",
+    instruction: "Введи число",
     generate: () => {
       const operators = ["+", "-", "*"]
       const mapping = {
@@ -25,6 +26,7 @@ const list = [
   {
     name: "Четное ли",
     description: "Определи, чётное число или нет",
+    instruction: 'Введи "да" или "нет"',
     generate: () => {
       const num = getRandNum(1, 100)
 

@@ -17,6 +17,10 @@ export default class Game {
     return this.game.description
   }
 
+  getInstruction() {
+    return this.game.instruction
+  }
+
   getScore() {
     return this.score
   }

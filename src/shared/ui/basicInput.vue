@@ -4,12 +4,17 @@
       :value="modelValue"
       type="text"
       @input="$emit('update:modelValue', $event.target.value)"
+      :placeholder="placeholder"
     />
   </div>
 </template>
 <script setup>
   defineProps({
     modelValue: String,
+    placeholder: {
+      type: String,
+      default: "Введите ответ",
+    },
   })
 </script>
 
