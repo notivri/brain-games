@@ -54,11 +54,20 @@
   const userAnswer = ref("")
 
   const handleSubmit = () => {
-    game.checkAnswer(userAnswer.value)
+    game.checkAnswer(userAnswer.value.toLowerCase())
     userAnswer.value = ""
   }
+
   watch(userLives, (lives) => {
     if (lives <= 0) {
+      router.push({
+        path: `/end/${userScore.value}/${gameId}`,
+      })
+    }
+  })
+
+  watch(userScore, (score) => {
+    if (score >= 5) {
       router.push({
         path: `/end/${userScore.value}/${gameId}`,
       })

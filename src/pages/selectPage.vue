@@ -2,7 +2,8 @@
   <div class="grid-wrapper">
     <router-link v-for="game in games" :to="`/game/${game.id}`" :key="game.id">
       <basicCard>
-        {{ game.name }}
+        <template #logo>{{ game.id }}</template>
+        <template #title>{{ game.name }}</template>
       </basicCard>
     </router-link>
   </div>

@@ -35,7 +35,24 @@ export default class Game {
   }
 
   checkAnswer(answer) {
-    if (Number(answer) === this.state.correctAnswer) {
+    const correct = this.state.correctAnswer
+
+    const strategies = {
+      number: (ans, corr) => {
+        const userAnswer = Number(ans)
+        return !isNaN(userAnswer) && userAnswer === corr
+      },
+      string: (ans, corr) => {
+        return String(ans).trim().toLowerCase() === corr.trim().toLowerCase()
+      },
+    }
+
+    const type = typeof correct
+    const strategy = strategies[type] ?? null
+
+    const isCorrect = strategy ? strategy(answer, correct) : false
+
+    if (isCorrect) {
       this.score.value++
     } else {
       this.lives.value--

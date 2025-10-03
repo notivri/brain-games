@@ -1,7 +1,9 @@
 <template>
   <div class="card">
-    <div class="logo" />
-    <p><slot /></p>
+    <div class="logo">
+      <slot name="logo" />
+    </div>
+    <p><slot name="title" /></p>
   </div>
 </template>
 
@@ -15,10 +17,16 @@
   }
 
   .logo {
-    width: min(40vw, 10rem);
-    height: min(40vw, 10rem);
+    width: min(40vw, 7rem);
+    height: min(40vw, 7rem);
     outline: solid 3px #562dd2;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(61pt, 5vw, 82pt);
+    font-weight: bold;
+    color: rgb(134, 134, 134);
   }
 
   p {

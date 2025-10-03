@@ -1,8 +1,7 @@
 import { getRandNum, getRandItemFrom } from "@/shared/functions/utils.js"
 
-export const games = [
+const list = [
   {
-    id: 1,
     name: "Калькулятор",
     description: "Посчитай пример",
     generate: () => {
@@ -23,4 +22,20 @@ export const games = [
       }
     },
   },
+  {
+    name: "Четное ли",
+    description: "Определи, чётное число или нет",
+    generate: () => {
+      const num = getRandNum(1, 100)
+
+      return {
+        gameQuestion: `Чётное ли число ${num}?`,
+        correctAnswer: num % 2 === 0 ? "да" : "нет",
+      }
+    },
+  },
 ]
+
+let id = 1
+
+export const games = list.map((game) => ({ id: id++, ...game }))
