@@ -22,10 +22,27 @@
 <script setup>
   import basicButton from "../shared/ui/basicButton.vue"
   import { useRoute } from "vue-router"
+  import User from "../entites/user/model/User.js"
   const route = useRoute()
-  const score = route.params.score
+  const score = Number(route.params.score)
   const isWin = score >= 5
+
+  const gameResult = {
+    result: isWin,
+    score: score,
+  }
+
+  onMounted(() => {
+    const savedUser = localStorage.getItem("user")
+
+    let user = null
+    user = Object.assign(new User(), JSON.parse(savedUser))
+
+    user.updateStats(gameResult)
+    user.save()
+  })
 </script>
+
 <style scoped>
   .image {
     background-color: #fff;

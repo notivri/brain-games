@@ -2,8 +2,12 @@
   <div class="grid-wrapper">
     <router-link v-for="game in games" :to="`/game/${game.id}`" :key="game.id">
       <basicCard>
-        <template #logo>{{ game.id }}</template>
-        <template #title>{{ game.name }}</template>
+        <template #logo>
+          {{ game.id }}
+        </template>
+        <template #title>
+          {{ game.name }}
+        </template>
       </basicCard>
     </router-link>
   </div>
@@ -12,6 +16,24 @@
 <script setup>
   import basicCard from "../shared/ui/basicCard.vue"
   import { games } from "@/shared/functions/games.js"
+  import User from "../entites/user/model/User.js"
+
+  const user = ref(null)
+
+  onMounted(() => {
+    const savedUser = localStorage.getItem("user")
+
+    if (savedUser) {
+      user.value = Object.assign(new User(), JSON.parse(savedUser))
+
+      console.log("Загружен User из localStorage:", user.value)
+    } else {
+      user.value = new User()
+      localStorage.setItem("user", JSON.stringify(user.value))
+
+      console.log("Создан новый User:", user.value)
+    }
+  })
 </script>
 
 <style scoped>
